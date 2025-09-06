@@ -6,60 +6,70 @@ type Delimiter string
 
 // Boolean flag types with constants
 type ReverseFlag bool
+
 const (
 	Reverse   ReverseFlag = true
 	NoReverse ReverseFlag = false
 )
 
 type NumericFlag bool
+
 const (
 	Numeric   NumericFlag = true
 	NoNumeric NumericFlag = false
 )
 
 type UniqueFlag bool
+
 const (
 	Unique   UniqueFlag = true
 	NoUnique UniqueFlag = false
 )
 
 type IgnoreCaseFlag bool
+
 const (
-	IgnoreCase      IgnoreCaseFlag = true
-	CaseSensitive   IgnoreCaseFlag = false
+	IgnoreCase    IgnoreCaseFlag = true
+	CaseSensitive IgnoreCaseFlag = false
 )
 
 type RandomFlag bool
+
 const (
-	Random    RandomFlag = true
-	NoRandom  RandomFlag = false
+	Random   RandomFlag = true
+	NoRandom RandomFlag = false
 )
 
 type IgnoreLeadingBlanksFlag bool
+
 const (
 	IgnoreLeadingBlanks   IgnoreLeadingBlanksFlag = true
 	NoIgnoreLeadingBlanks IgnoreLeadingBlanksFlag = false
 )
 
 type VersionSortFlag bool
+
 const (
 	VersionSort   VersionSortFlag = true
 	NoVersionSort VersionSortFlag = false
 )
 
 type HumanNumericFlag bool
+
 const (
 	HumanNumeric   HumanNumericFlag = true
 	NoHumanNumeric HumanNumericFlag = false
 )
 
 type MonthSortFlag bool
+
 const (
 	MonthSort   MonthSortFlag = true
 	NoMonthSort MonthSortFlag = false
 )
 
 type StableSortFlag bool
+
 const (
 	StableSort   StableSortFlag = true
 	NoStableSort StableSortFlag = false
@@ -67,18 +77,18 @@ const (
 
 // Flags represents the configuration options for the sort command
 type Flags struct {
-	Reverse              ReverseFlag             // Reverse sort order (-r)
-	Numeric              NumericFlag             // Numeric sort (-n)
-	Unique               UniqueFlag              // Remove duplicates (-u)
-	IgnoreCase           IgnoreCaseFlag          // Case insensitive sort (-f)
-	Field                Field                   // Sort by specific field (-k)
-	Delimiter            Delimiter               // Field delimiter (-t)
-	Random               RandomFlag              // Random shuffle (-R)
-	IgnoreLeadingBlanks  IgnoreLeadingBlanksFlag // Ignore leading blanks (-b)
-	VersionSort          VersionSortFlag         // Version sort (-V)
-	HumanNumeric         HumanNumericFlag        // Human numeric sort (-h)
-	MonthSort            MonthSortFlag           // Month sort (-M)
-	StableSort           StableSortFlag          // Stable sort (-s)
+	Reverse             ReverseFlag             // Reverse sort order (-r)
+	Numeric             NumericFlag             // Numeric sort (-n)
+	Unique              UniqueFlag              // Remove duplicates (-u)
+	IgnoreCase          IgnoreCaseFlag          // Case insensitive sort (-f)
+	Field               Field                   // Sort by specific field (-k)
+	Delimiter           Delimiter               // Field delimiter (-t)
+	Random              RandomFlag              // Random shuffle (-R)
+	IgnoreLeadingBlanks IgnoreLeadingBlanksFlag // Ignore leading blanks (-b)
+	VersionSort         VersionSortFlag         // Version sort (-V)
+	HumanNumeric        HumanNumericFlag        // Human numeric sort (-h)
+	MonthSort           MonthSortFlag           // Month sort (-M)
+	StableSort          StableSortFlag          // Stable sort (-s)
 }
 
 // Configure methods for the opt system
