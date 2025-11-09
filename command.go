@@ -6,24 +6,24 @@ import (
 	"strconv"
 	"strings"
 
-	yup "github.com/gloo-foo/framework"
+	gloo "github.com/gloo-foo/framework"
 )
 
-type command yup.Inputs[yup.File, flags]
+type command gloo.Inputs[gloo.File, flags]
 
-func Sort(parameters ...any) yup.Command {
-	// Initialize automatically opens files when T is yup.File
-	cmd := command(yup.Initialize[yup.File, flags](parameters...))
+func Sort(parameters ...any) gloo.Command {
+	// Initialize automatically opens files when T is gloo.File
+	cmd := command(gloo.Initialize[gloo.File, flags](parameters...))
 	if cmd.Flags.Delimiter == "" {
 		cmd.Flags.Delimiter = " "
 	}
 	return cmd
 }
 
-func (p command) Executor() yup.CommandExecutor {
+func (p command) Executor() gloo.CommandExecutor {
 	// Wrap the helper executor so framework handles stdin vs files automatically
-	return yup.Inputs[yup.File, flags](p).Wrap(
-		yup.AccumulateAndProcess(func(lines []string) []string {
+	return gloo.Inputs[gloo.File, flags](p).Wrap(
+		gloo.AccumulateAndProcess(func(lines []string) []string {
 			return p.sortLines(lines)
 		}).Executor(),
 	)
